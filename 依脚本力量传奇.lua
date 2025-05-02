@@ -1129,7 +1129,7 @@ about:Textbox("自定义重生次数","自定义重生次数","leng", false, fun
     bin.birth = value
 end)
 
-about:Toggle("重生到指定的重生次数","leng", false, function(state)
+about:Toggle("重生到指定的重生次数","XYNB", false, function(state)
     if game:GetService("Players").LocalPlayer.leaderstats.Rebirths.Value >= bin.birth then
     game.Players.LocalPlayer:Kick("已自动重生到"..bin.birth"，已自动为你踢出")
 else
