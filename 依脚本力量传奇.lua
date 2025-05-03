@@ -1125,7 +1125,7 @@ local UITab1 = win:Tab("『重生』",'16060333448')
 
 local about = UITab1:section("『依脚本』",false)
 
-about:Textbox("自定义重生次数","自定义重生次数","leng", false, function(value)
+about:Textbox("自定义重生次数","自定义重生次数","XYNB", false, function(value)
     bin.birth = value
 end)
 
