@@ -109,8 +109,9 @@ local about = UITab1:section("作者发话",true)
 about:Label("依脚本")
 about:Label("作者：小依")
 about:Label("脚本持续云更新中")
-about:Label("脚本上次更新时间3月30日")
-about:Label("此服务器已支持服务器ID检测")
+about:Label("脚本上次更新时间5月24日")
+about:Label("欢迎使用")
+about:Label("你好"..game.Players.LocalPlayer.Character.Name)
 
 local about = UITab1:section("『玩家信息』",false)
 
@@ -121,24 +122,6 @@ about:Label("你现在的服务器名称:"..game:GetService("MarketplaceService"
 about:Label("你现在的服务器id:"..game.GameId)
 about:Label("你的用户ID:"..game.Players.LocalPlayer.UserId)
 about:Label("获取客户端ID:"..game:GetService("RbxAnalyticsService"):GetClientId())
-
-local about = UITab1:section("『作者QQand群』",false)
-
-about:Button("点我复制依脚本交流群群",function()
-    setclipboard("815883059")
-end)
-
-    about:Button("点我复制解卡主群",function()
-    setclipboard("1037013712")
-end)
-
-about:Button("点我复制解卡一群",function()
-    setclipboard("596456639")
-end)
-
-    about:Button("点我复制小依QQ",function()
-    setclipboard("3464826110")
-end)
 
 local UITab1 = win:Tab("『加入其他服务器』",'7734068321')
 
@@ -1282,21 +1265,55 @@ about:Label("第一个刷钱和第二个是不同的 一个不能用 可以用�
 
 about:Label("建议在私服刷，公服全是人容易崩")
 
+about:Label("首先先打开这个↓")
+
 about:Button("河北唐县卡车刷钱",function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Marco8642/science/ok/T%20ang%20County"))()
 end)
+
+about:Label("然后点击这个↓")
+
+about:Button("变成卡车司机", function()
+ local args = {
+    [1] = "Trucker"
+}
+
+game:GetService("ReplicatedStorage").Feature_RemoteEvent.TeamSwitch:FireServer(unpack(args))
+
+end)
+
+about:Label("第三个是这个↓")
 
 about:Toggle("开启卡车刷钱后点我", "TD", false, function(TD)
     if TD then
      wait(8)
         while TD do
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(10585.7197265625, 43.7899169921875, 3235.1513671875)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(10577.7890625, 42.9037971496582, 3202.989501953125)
   wait(12)
      
         end
     end
 end)
-about:Label("卡车刷钱修复版")
+
+about:Label("最后打开这个↓")
+
+about:Toggle("打开自动接取任务并召唤卡车", "TD", false, function(TD)
+    if TD then
+     wait(0.1)
+        while TD do
+        local args = {
+    [1] = workspace.TruckingJob.Coal.routeA,
+    [2] = "2012 Shacman M3000 4X2"
+}
+
+game:GetService("ReplicatedStorage").Packages.Shared.Network.RemoteFunctions.ClientRequestCoalJob:InvokeServer(unpack(args))
+  wait(0.1)
+     
+        end
+    end
+end)
+
+about:Label("卡车刷钱修复版bug有点小多")
 
 about:Label("修改钱数(仅供娱乐)")
 
@@ -1318,153 +1335,4 @@ end)
 
 about:Textbox("修改钱数", "arg", "输入",function(arg)
 game:GetService("Players").LocalPlayer.Money.Value = arg
-end)
-local UITab1 = win:Tab("『切换职业』",'7734068321')
-
-local about = UITab1:section("",true)
-
-about:Button("变成警察(需要先购买警察通行证)", function()
-    local args = {
-    [1] = "Police"
-}
-
-game:GetService("ReplicatedStorage").TeamSwitch:FireServer(unpack(args))
-
-end)
-
-about:Button("变成平民", function()
-    local args = {
-    [1] = "Civilian"
-}
-
-game:GetService("ReplicatedStorage").TeamSwitch:FireServer(unpack(args))
-
-end)
-
-about:Button("变成混合冰淇淋", function()
-    local args = {
-    [1] = "Mixue Ice Cream"
-}
-
-game:GetService("ReplicatedStorage").TeamSwitch:FireServer(unpack(args))
-
-end)
-
-about:Button("变成咖啡师", function()
-    local args = {
-    [1] = "Teawen Barista"
-}
-
-game:GetService("ReplicatedStorage").TeamSwitch:FireServer(unpack(args))
-
-end)
-
-about:Button("变成送货司机", function()
-    local args = {
-    [1] = "Delivery Driver"
-}
-
-game:GetService("ReplicatedStorage").TeamSwitch:FireServer(unpack(args))
-
-end)
-
-
-about:Button("变成出租车司机", function()
-    local args = {
-    [1] = "Taxi Driver"
-}
-
-game:GetService("ReplicatedStorage").TeamSwitch:FireServer(unpack(args))
-
-end)
-
-
-about:Button("变成线上计程车", function()
-    local args = {
-    [1] = "Ole Online Taxi Sharing"
-}
-
-game:GetService("ReplicatedStorage").TeamSwitch:FireServer(unpack(args))
-
-end)
-
-about:Button("变成卡车司机", function()
-    local args = {
-    [1] = "Trucker"
-}
-
-game:GetService("ReplicatedStorage").TeamSwitch:FireServer(unpack(args))
-
-end)
-
-about:Button("变成超市收银员", function()
-    local args = {
-    [1] = "Grocery Cashier"
-}
-
-game:GetService("ReplicatedStorage").TeamSwitch:FireServer(unpack(args))
-
-end)
-
-about:Button("变成罪犯", function()
-    local args = {
-    [1] = "Criminal"
-}
-
-game:GetService("ReplicatedStorage").TeamSwitch:FireServer(unpack(args))
-
-end)
-
-about:Button("变成学生", function()
-    local args = {
-    [1] = "Student"
-}
-
-game:GetService("ReplicatedStorage").TeamSwitch:FireServer(unpack(args))
-
-end)
-
-about:Button("变成老师", function()
-    local args = {
-    [1] = "Teacher"
-}
-
-game:GetService("ReplicatedStorage").TeamSwitch:FireServer(unpack(args))
-
-end)
-
-about:Button("变成商店员工", function()
-    local args = {
-    [1] = "Store Worker"
-}
-
-game:GetService("ReplicatedStorage").TeamSwitch:FireServer(unpack(args))
-
-end)
-
-about:Button("变成变pao商店工人", function()
-    local args = {
-    [1] = "Pao Store Worker"
-}
-
-game:GetService("ReplicatedStorage").TeamSwitch:FireServer(unpack(args))
-
-end)
-
-about:Button("变成救援人员", function()
-    local args = {
-    [1] = "Paramedic"
-}
-
-game:GetService("ReplicatedStorage").TeamSwitch:FireServer(unpack(args))
-
-end)
-
-about:Button("变成巴车司机", function()
-    local args = {
-    [1] = "Bus Driver"
-}
-
-game:GetService("ReplicatedStorage").TeamSwitch:FireServer(unpack(args))
-
 end)
